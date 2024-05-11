@@ -1,11 +1,11 @@
 frontend:
   image: gebangfeng/frontend
-  tag: e45b88c
+  tag: d5b47a3
   autoscaling:
     averageUtilization: 90
 backend:
   image: gebangfeng/backend
-  tag: e45b88c
+  tag: d5b47a3
   autoscaling:
     averageUtilization: 90
 database:
