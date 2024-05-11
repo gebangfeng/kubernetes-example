@@ -52,8 +52,8 @@ jobs:
           valueFile: 'helm/values.yaml'
           commitChange: true
           branch: main
-          repository: gebangfeng/kubernetes-example-deployment.git
-          token: ${{GITHUB_TOKEN}}
+          repository: 'gebangfeng/kubernetes-example-deployment'
+          token: ${{ secrets.GITHUB_TOKEN }} 
           message: 'Update Image Version to ${{ steps.vars.outputs.sha_short }}'
           changes: |
             {
