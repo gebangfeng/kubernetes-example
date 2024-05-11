@@ -1,11 +1,11 @@
 frontend:
   image: gebangfeng/frontend
-  tag: '1276e23'
+  tag: 9a9d972
   autoscaling:
     averageUtilization: 90
 backend:
   image: gebangfeng/backend
-  tag: '1276e23'
+  tag: 9a9d972
   autoscaling:
     averageUtilization: 90
 database:
@@ -13,4 +13,3 @@ database:
   uri: pg-service
   username: postgres
   password: postgres
-  
