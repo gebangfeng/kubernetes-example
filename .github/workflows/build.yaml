@@ -46,21 +46,19 @@ jobs:
           repository: 'gebangfeng/kubernetes-example-deployment'
           path: infrastructure
           token: ${{ secrets.GITHUB_TOKEN }} 
-      - name: Update Image Version in the related HelmChart values.yaml
+      - name: Update helm values.yaml
         uses: fjogeleit/yaml-update-action@main
         with:
           valueFile: 'helm/values.yaml'
           commitChange: true
           branch: main
-          repository: 'gebangfeng/kubernetes-example-deployment'
-	  token: ${{ secrets.GITHUB_TOKEN }}
+          repository: gebangfeng/kubernetes-example-deployment.git
           message: 'Update Image Version to ${{ steps.vars.outputs.sha_short }}'
           changes: |
             {
               "backend.tag": "${{ steps.vars.outputs.sha_short }}",
               "frontend.tag": "${{ steps.vars.outputs.sha_short }}"
             }
-
 
       # - name: Update helm values.yaml
       #   uses: fjogeleit/yaml-update-action@main
